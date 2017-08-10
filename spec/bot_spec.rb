@@ -18,8 +18,9 @@ describe Twitch do
   	end  	
   end
   
-  context 'Sending messages' do
-  	xit 'can send a message' do
+  context 'Running behaviour of the bot' do
+  	xit 'can reply to a message' do
+  		bot.send('!hello')
   		expect(bot.send('hello')).to eq 'hello'
   	end
   context 'Stopping the bot' do
