@@ -11,4 +11,13 @@ attr_reader :logger, :running, :socket
     @socket  = nil
   end
 
+  def send(message)
+    logger.info "< #{message}"
+    socket.puts(message)
+  end
+
+  def stop
+    @running = false
+  end
+  
 end
