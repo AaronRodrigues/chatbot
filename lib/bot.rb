@@ -57,5 +57,10 @@ attr_reader :logger, :running, :socket
   def stop
     @running = false
   end
+  
+  if TWITCH_CHAT_TOKEN.empty? || TWITCH_USER.empty?
+    puts "You need to fill in your own Twitch credentials!"
+    exit(1)
+  end
 
 end
