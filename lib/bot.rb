@@ -62,5 +62,20 @@ attr_reader :logger, :running, :socket
     puts "You need to fill in your own Twitch credentials!"
     exit(1)
   end
+  
+  bot = Twitch.new
+bot.run
+
+while (bot.running) do
+  command = gets.chomp
+
+  if command == 'quit'
+    bot.stop
+  else
+    bot.send(command)
+  end
+end
+
+puts 'Exited.'
 
 end
