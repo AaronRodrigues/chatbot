@@ -13,15 +13,20 @@ describe Twitch do
   	it ' and checks running status' do
   		expect(bot.running).to eq false
   	end
-  	it 'and checks socket' do
+  	it ' and checks socket' do
   		expect(bot.socket).to eq nil
-  	end
+  	end  	
+  end
+  
+  context 'Sending messages' do
   	xit 'can send a message' do
   		expect(bot.send('hello')).to eq 'hello'
   	end
-  	it 'can change running status when stopped' do
+  context 'Stopping the bot' do
+  	it ' can change running status when stopped' do
   		bot.stop
   		expect(bot.running).to eq false
   	end
   end
+ end
 end

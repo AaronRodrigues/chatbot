@@ -1,3 +1,7 @@
+require 'dotenv/load'
+TWITCH_CHAT_TOKEN = ENV['TWITCH_CHAT_TOKEN']
+TWITCH_USER       = ENV['TWITCH_USER']
+
 require 'socket'
 require 'logger'
 
@@ -19,5 +23,5 @@ attr_reader :logger, :running, :socket
   def stop
     @running = false
   end
-  
+
 end
