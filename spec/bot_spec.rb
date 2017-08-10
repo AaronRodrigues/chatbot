@@ -7,8 +7,14 @@ describe Twitch do
   	it 'exists' do
   		expect(bot).to be_truthy
   	end
-  	it 'initializes with a new logger' do
+  	it ' with a new logger' do
   		expect(bot.logger).to be_kind_of(Logger)
   	end	
+  	it ' and checks running status' do
+  		expect(bot.running).to eq false
+  	end
+  	it 'and checks socket' do
+  		expect(bot.socket).to eq nil
+  	end
   end
 end
