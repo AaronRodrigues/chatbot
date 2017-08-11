@@ -1,6 +1,4 @@
-### Chatbot
-
-## A Tech Test for Stafford-Long
+## Chatbot - A Tech Test for Stafford-Long
 
 Simplified chat bot with pre-written messages and admin editor interface
 
