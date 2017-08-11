@@ -2,10 +2,10 @@
 
 Simplified chat bot with pre-written messages and admin editor interface
 
-Ruby 2.4.1
-Rails 5.1.2
-Test framework: RSpec
-VCS: GIT
+-Ruby 2.4.1
+-Rails 5.1.2
+-Test framework: RSpec
+-VCS: GIT
 
 ### Description
 A user lands on the page and sends the first pre-written message to the bot (this is the root of the tree), they receive a response, for which they are then are presented with 2-3 optional possible pre-written messages to choose from to send back, each of which lead to a new ‘response’ from from the bot, and so on.
@@ -87,3 +87,10 @@ JOIN #channelname
 1. Next I would implement a state machine which would take in a series of nested sentences that would simulate a more natural conversation.
 2. For a Rails implementation, I would implement the user authentication using something similar to passport which is middleware for node.js, or build it from scratch as it is a standard boilerplate code that we have worked with on projects. 
 3. For the front end, I would use bootstrap with some HTML and CSS to make it look pretty.
+
+### Tests
+
+Run tests by typing the following in the command line
+```
+rspec
+```
