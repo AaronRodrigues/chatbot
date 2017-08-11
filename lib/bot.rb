@@ -8,8 +8,7 @@ require 'logger'
 Thread.abort_on_exception = true
 
 class Twitch
-
-attr_reader :logger, :running, :socket
+  attr_reader :logger, :running, :socket
 
   def initialize(logger = nil)
     @logger  = logger || Logger.new(STDOUT)
@@ -46,6 +45,18 @@ attr_reader :logger, :running, :socket
             user = match[1]
             logger.info "USER COMMAND: #{user} - !hello"
             send "PRIVMSG #azraellives :Hello, #{user} from Mailbot!"
+            elsif message =~ /^!sup/
+            user = match[1]
+            logger.info "USER COMMAND: #{user} - !sup"
+            send "PRIVMSG #azraellives :Sup Dawg, #{user} from Mailbot! Welcome to da hood!"   
+            elsif message =~ /^!hows it going?/
+            user = match[1]
+            logger.info "USER COMMAND: #{user} - !hows it going?"
+            send "PRIVMSG #azraellives :You know how it is, #{user}! We be chillin' Where have you been?"
+            elsif message =~ /^!home/
+            user = match[1]
+            logger.info "USER COMMAND: #{user} - !home"
+            send "PRIVMSG #azraellives :Fer Realz? #{user}! You gotta get out more!"        	
           end
 
           logger.info "> #{line}"
@@ -57,13 +68,14 @@ attr_reader :logger, :running, :socket
   def stop
     @running = false
   end
-  
-  if TWITCH_CHAT_TOKEN.empty? || TWITCH_USER.empty?
-    puts "You need to fill in your own Twitch credentials!"
-    exit(1)
-  end
-  
-  bot = Twitch.new
+end
+
+if TWITCH_CHAT_TOKEN.empty? || TWITCH_USER.empty?
+  puts "You need to fill in your own Twitch credentials!"
+  exit(1)
+end
+
+bot = Twitch.new
 bot.run
 
 while (bot.running) do
@@ -77,5 +89,3 @@ while (bot.running) do
 end
 
 puts 'Exited.'
-
-end
