@@ -2,10 +2,10 @@
 
 Simplified chat bot with pre-written messages and admin editor interface
 
--Ruby 2.4.1
--Rails 5.1.2
--Test framework: RSpec
--VCS: GIT
+- Ruby 2.4.1
+- Rails 5.1.2
+- Test framework: RSpec
+- VCS: GIT
 
 ### Description
 A user lands on the page and sends the first pre-written message to the bot (this is the root of the tree), they receive a response, for which they are then are presented with 2-3 optional possible pre-written messages to choose from to send back, each of which lead to a new ‘response’ from from the bot, and so on.
